@@ -72,18 +72,20 @@ const Dictionary = () => {
   return (
     <div className="space-y-6 animate-fade-in">
       <section className="mb-8">
-        <h1 className="text-3xl font-bold mb-4 font-playfair text-russian-blue">Словарь пословиц и поговорок</h1>
-        <p className="text-muted-foreground">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 font-playfair text-russian-blue border-b-2 border-russian-gold pb-2">
+          Pogovorky.ru — Сокровищница русской мудрости
+        </h1>
+        <p className="text-muted-foreground italic border-l-4 border-russian-red pl-4 py-2 bg-russian-cream/20">
           Исследуйте богатство русской народной мудрости в нашей коллекции пословиц и поговорок
         </p>
       </section>
 
-      <section className="flex flex-col md:flex-row gap-4 mb-8">
+      <section className="flex flex-col md:flex-row gap-4 mb-8 bg-card p-4 rounded-lg shadow-md">
         <div className="relative flex-grow">
-          <Search className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+          <Search className="absolute left-3 top-3 h-5 w-5 text-russian-blue/70" />
           <Input
             placeholder="Поиск пословиц и поговорок..."
-            className="pl-10 border-russian-gold/30"
+            className="pl-10 border-russian-gold/30 bg-russian-cream/30 focus-visible:ring-russian-blue"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -91,9 +93,9 @@ const Dictionary = () => {
         
         <div className="md:w-64">
           <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-            <SelectTrigger className="border-russian-gold/30">
+            <SelectTrigger className="border-russian-gold/30 bg-russian-cream/30">
               <div className="flex items-center">
-                <Filter className="h-4 w-4 mr-2" />
+                <Filter className="h-4 w-4 mr-2 text-russian-blue/70" />
                 <SelectValue placeholder="Категория" />
               </div>
             </SelectTrigger>
@@ -120,13 +122,12 @@ const Dictionary = () => {
           ))}
         </div>
       ) : (
-        <div className="text-center py-12">
+        <div className="text-center py-12 bg-russian-pattern rounded-lg border border-russian-gold/30">
           <p className="text-lg text-muted-foreground">
             Ничего не найдено. Попробуйте изменить параметры поиска.
           </p>
           <Button 
-            className="mt-4" 
-            variant="outline"
+            className="mt-4 bg-russian-blue hover:bg-russian-blue/90" 
             onClick={() => {
               setSearchQuery("");
               setSelectedCategory("Все");
