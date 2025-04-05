@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link to="/" className="flex items-center gap-2 text-russian-blue">
             <BookOpen className="h-6 w-6 text-russian-red" />
-            <span className="text-xl font-playfair font-bold">СловоСпас</span>
+            <span className="text-xl font-playfair font-bold">Pogovorky.ru</span>
           </Link>
         </div>
         
